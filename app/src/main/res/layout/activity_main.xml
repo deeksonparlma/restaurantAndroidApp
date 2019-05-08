@@ -3,8 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:layout_height="match_parent">
 
 
     <ImageView
@@ -19,16 +18,47 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="35dp"
+        android:layout_marginTop="5dp"
+        android:id="@+id/appNameTextView"
         android:text="E-Restaurants"
-        android:textColor="@color/colorAccent"/>
-    <Button
+        android:textColor="@color/colorAccent"
+        android:textSize="35sp"
+        />
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="Enter your location below"
+        android:layout_marginTop="350dp"
+        android:layout_marginLeft="100dp"
+        android:textColor="#ffff"
+        />
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="135dp"
+        android:layout_marginLeft="50dp"
+        android:src="@drawable/location"/>
+
+    <EditText
+        android:id="@+id/locationInput"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="375dp"
+        android:layout_marginLeft="100dp"
+        android:textColor="#ffff"
+        android:hint="location"
+        android:textColorHint="@color/colorAccent"
+        />
+
+    <Button
+        android:layout_width="340dp"
+        android:layout_height="wrap_content"
         android:text="Find Restaurants"
-        android:id="@+id/button"
-        android:layout_marginTop="455dp"
+        android:id="@+id/findbutton"
+        android:layout_marginTop="526dp"
         android:background="@color/colorAccent"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:textColor="#000"
+        />
 
 </RelativeLayout>
