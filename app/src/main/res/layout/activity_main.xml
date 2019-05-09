@@ -61,4 +61,13 @@
         android:textColor="#000"
         />
 
+    <!--<RatingBar-->
+        <!--android:id="@+id/ratingBar"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginLeft="70dp"-->
+        <!--android:layout_marginTop="200dp"-->
+        <!--android:background="#3456"-->
+        <!--/>-->
+
 </RelativeLayout>

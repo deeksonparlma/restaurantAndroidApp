@@ -2,6 +2,7 @@ package com.epicodus.myrestaurant;
 
 import android.content.Intent;
 import android.graphics.Typeface;
+import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -10,19 +11,21 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 public class MainActivity extends AppCompatActivity {
-    private Button mFindRestaurantsButton;
-    private EditText mlocation;
-    private TextView mAppNameTextView;
+  @BindView(R.id.findbutton) Button mFindRestaurantsButton;
+  @BindView(R.id.appNameTextView) TextView mAppNameTextView;
+  @BindView(R.id.locationInput) EditText mlocation;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        mAppNameTextView = (TextView) findViewById(R.id.appNameTextView);
+        ButterKnife.bind(this);
+
         Typeface ostrichFont = Typeface.createFromAsset(getAssets(), "fonts/font1.ttf");
-        mAppNameTextView.setTypeface(ostrichFont);
-        mlocation = (EditText) findViewById(R.id.locationInput);
-        mFindRestaurantsButton = (Button) findViewById(R.id.findbutton);
 
         mFindRestaurantsButton.setOnClickListener(new View.OnClickListener() {
             @Override

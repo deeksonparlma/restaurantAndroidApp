@@ -9,7 +9,6 @@ import org.robolectric.Robolectric;
 import org.robolectric.RobolectricTestRunner;
 
 import static junit.framework.TestCase.assertTrue;
-
 @RunWith(RobolectricTestRunner.class)
 public class MainActivityTest {
     private MainActivity activity;
