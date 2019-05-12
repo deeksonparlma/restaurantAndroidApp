@@ -76,6 +76,9 @@ public class RestaurantActivity extends AppCompatActivity {
 
                     @Override
                     public void run() {
+                        String[] restaurantNames = new String[mRestaurants.size()];
+                        for (int i = 0; i < restaurantNames.length; i++) {
+                            restaurantNames[i] = mRestaurants.get(i).getName();
                     }
 
                 });
