@@ -21,15 +21,18 @@ import java.io.IOException;
 
 public class RestaurantActivity extends AppCompatActivity {
     public static final String TAG = RestaurantActivity.class.getSimpleName();
-    private String[] restaurants = new String[] {"Mi Mero Mole", "Mother's Bistro",
+
+    private String[] restaurants = new String[]{"Mi Mero Mole", "Mother's Bistro",
             "Life of Pie", "Screen Door", "Luc Lac", "Sweet Basil",
             "Slappy Cakes", "Equinox", "Miss Delta's", "Andina",
             "Lardo", "Portland City Grill", "Fat Head's Brewery",
             "Chipotle", "Subway"};
-    private String[] cuisines = new String[] {"Vegan Food", "Breakfast", "Fishs Dishs", "Scandinavian", "Coffee", "English Food", "Burgers", "Fast Food", "Noodle Soups", "Mexican", "BBQ", "Cuban", "Bar Food", "Sports Bar", "Breakfast", "Mexican" };
+    private String[] cuisines = new String[]{"Vegan Food", "Breakfast", "Fishs Dishs", "Scandinavian", "Coffee", "English Food", "Burgers", "Fast Food", "Noodle Soups", "Mexican", "BBQ", "Cuban", "Bar Food", "Sports Bar", "Breakfast", "Mexican"};
 
-    @BindView(R.id.locationDisplay) TextView mLocation;
-    @BindView(R.id.listView) ListView mListView;
+    @BindView(R.id.locationDisplay)
+    TextView mLocation;
+    @BindView(R.id.listView)
+    ListView mListView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,25 +53,29 @@ public class RestaurantActivity extends AppCompatActivity {
         Intent intent = getIntent();
         String location = intent.getStringExtra("location");
         mLocation.setText("Here are all the restaurants near: " + location);
-        private void getRestaurants(String location) {
-            final YelpService yelpService = new YelpService();
-            yelpService.findRestaurants(location, new Callback() {
+        getRestaurants(location);
 
-                @Override
-                public void onFailure(Call call, IOException e) {
+    }
+
+    private void getRestaurants(String location) {
+        final YelpService yelpService = new YelpService();
+        yelpService.findRestaurants(location, new Callback() {
+
+            @Override
+            public void onFailure(Call call, IOException e) {
+                e.printStackTrace();
+            }
+
+            @Override
+            public void onResponse(Call call, Response response) throws IOException {
+                try {
+                    String jsonData = response.body().string();
+                    Log.v(TAG, jsonData);
+                } catch (IOException e) {
                     e.printStackTrace();
                 }
-
-                @Override
-                public void onResponse(Call call, Response response) throws IOException {
-                    try {
-                        String jsonData = response.body().string();
-                        Log.v(TAG, jsonData);
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                }
-            });
-      }
+            }
+        });
     }
 }
+
