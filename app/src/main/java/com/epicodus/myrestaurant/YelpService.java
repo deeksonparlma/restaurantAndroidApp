@@ -2,6 +2,7 @@ package com.epicodus.myrestaurant;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.json.XML;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -14,6 +15,7 @@ import okhttp3.Request;
 import okhttp3.Response;
 
 public class YelpService {
+
     public static void findRestaurants(String location, Callback callback) {
         OkHttpClient client = new OkHttpClient.Builder()
                 .build();
@@ -32,9 +34,15 @@ public class YelpService {
     }
     public ArrayList<Restaurant> processResults(Response response){
         ArrayList<Restaurant> restaurants = new ArrayList<>();
+
         try{
-            String jsonData = response.body().string();
-            JSONObject yelpJSON = new JSONObject(jsonData);
+//            String xmlData = response.body().string();
+//            JSONObject yelpJSON = XML.toJSONObject(xmlData);
+//            String jsonData = response.body().string();
+//            JSONObject yelpJSON = new JSONObject(jsonData);
+//            JSONArray businessesJSON = yelpJSON.getJSONArray("businesses");
+            String xmlData = response.body().string();
+            JSONObject yelpJSON = XML.toJSONObject(xmlData);
             JSONArray businessesJSON = yelpJSON.getJSONArray("businesses");
             if (response.isSuccessful()){
                 for (int i = 0; i < businessesJSON.length(); i++){
