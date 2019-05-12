@@ -1,7 +1,7 @@
 package com.epicodus.myrestaurant;
 
 import java.util.ArrayList;
-
+//model//
 public class Restaurant {
     private String mName;
     private String mPhone;
