@@ -81,6 +81,9 @@ public class RestaurantActivity extends AppCompatActivity {
                             restaurantNames[i] = mRestaurants.get(i).getName();
                     }
 
+                        ArrayAdapter adapter = new ArrayAdapter(RestaurantActivity.this,
+                                android.R.layout.simple_list_item_1, restaurantNames);
+                        mListView.setAdapter(adapter);
                 });
             }
         });
