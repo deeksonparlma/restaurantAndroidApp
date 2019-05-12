@@ -1,4 +1,5 @@
 package com.epicodus.myrestaurant;
+import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.HttpUrl;
 import okhttp3.OkHttpClient;
@@ -13,10 +14,13 @@ public class YelpService {
         urlBuilder.addQueryParameter(Constants.YELP_LOCATION_QUERY_PARAMETER, location);
         String url = urlBuilder.build().toString();
 
+        //request//
         Request request = new Request.Builder()
                 .url(url)
                 .header("Authorization", Constants.YELP_TOKEN)
                 .build();
+        Call call = client.newCall(request);
+        call.enqueue(callback);
     }
 
 }
