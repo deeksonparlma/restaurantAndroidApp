@@ -69,16 +69,16 @@ public class RestaurantActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onResponse(Call call, Response response) throws IOException {
-                try {
-                    String jsonData = response.body().string();
-                    if (response.isSuccessful()) {
-                        Log.v(TAG, jsonData);
-                        mRestaurants = yelpService.processResults(response);
+            public void onResponse(Call call, Response response) {
+                mRestaurants = yelpService.processResults(response);
+
+                RestaurantActivity.this.runOnUiThread(new Runnable() {
+
+                    @Override
+                    public void run() {
                     }
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+
+                });
             }
         });
     }
