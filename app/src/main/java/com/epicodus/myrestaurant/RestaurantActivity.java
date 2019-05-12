@@ -18,6 +18,7 @@ import okhttp3.Callback;
 import okhttp3.Response;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class RestaurantActivity extends AppCompatActivity {
     public static final String TAG = RestaurantActivity.class.getSimpleName();
@@ -33,6 +34,7 @@ public class RestaurantActivity extends AppCompatActivity {
     TextView mLocation;
     @BindView(R.id.listView)
     ListView mListView;
+    public ArrayList<Restaurant> mRestaurants = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,7 +72,10 @@ public class RestaurantActivity extends AppCompatActivity {
             public void onResponse(Call call, Response response) throws IOException {
                 try {
                     String jsonData = response.body().string();
-                    Log.v(TAG, jsonData);
+                    if (response.isSuccessful()) {
+                        Log.v(TAG, jsonData);
+                        mRestaurants = yelpService.processResults(response);
+                    }
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
