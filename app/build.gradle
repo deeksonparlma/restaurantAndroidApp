@@ -38,4 +38,7 @@ dependencies {
 android {
     compileSdkVersion 28
     testOptions.unitTests.includeAndroidResources = true
+    buildTypes.each {
+        it.buildConfigField 'String', 'YELP_TOKEN', YelpToken
+    }
 }
