@@ -36,13 +36,8 @@ public class YelpService {
         ArrayList<Restaurant> restaurants = new ArrayList<>();
 
         try{
-//            String xmlData = response.body().string();
-//            JSONObject yelpJSON = XML.toJSONObject(xmlData);
-//            String jsonData = response.body().string();
-//            JSONObject yelpJSON = new JSONObject(jsonData);
-//            JSONArray businessesJSON = yelpJSON.getJSONArray("businesses");
-            String xmlData = response.body().string();
-            JSONObject yelpJSON = XML.toJSONObject(xmlData);
+            String jsonData = response.body().string();
+            JSONObject yelpJSON = new JSONObject(jsonData);
             JSONArray businessesJSON = yelpJSON.getJSONArray("businesses");
             if (response.isSuccessful()){
                 for (int i = 0; i < businessesJSON.length(); i++){

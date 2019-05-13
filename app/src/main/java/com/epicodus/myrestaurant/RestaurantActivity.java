@@ -22,35 +22,15 @@ import java.util.ArrayList;
 
 public class RestaurantActivity extends AppCompatActivity {
     public static final String TAG = RestaurantActivity.class.getSimpleName();
-
-    private String[] restaurants = new String[]{"Mi Mero Mole", "Mother's Bistro",
-            "Life of Pie", "Screen Door", "Luc Lac", "Sweet Basil",
-            "Slappy Cakes", "Equinox", "Miss Delta's", "Andina",
-            "Lardo", "Portland City Grill", "Fat Head's Brewery",
-            "Chipotle", "Subway"};
-    private String[] cuisines = new String[]{"Vegan Food", "Breakfast", "Fishs Dishs", "Scandinavian", "Coffee", "English Food", "Burgers", "Fast Food", "Noodle Soups", "Mexican", "BBQ", "Cuban", "Bar Food", "Sports Bar", "Breakfast", "Mexican"};
-
-    @BindView(R.id.locationDisplay)
-    TextView mLocation;
-    @BindView(R.id.listView)
-    ListView mListView;
+    @BindView(R.id.locationDisplay) TextView mLocation;
+    @BindView(R.id.listView) ListView mListView;
     public ArrayList<Restaurant> mRestaurants = new ArrayList<>();
-
+    private ArrayList<Restaurant> restaurants = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_restaurant);
         ButterKnife.bind(this);
-        MyRestaurantAdapter adapter = new MyRestaurantAdapter(this, android.R.layout.simple_list_item_1, restaurants, cuisines);
-        mListView.setAdapter(adapter);
-
-        mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                String restaurant = ((TextView) view).getText().toString();
-                Toast.makeText(RestaurantActivity.this, restaurant, Toast.LENGTH_SHORT).show();
-            }
-        });
         //intent//
         Intent intent = getIntent();
         String location = intent.getStringExtra("location");
@@ -84,9 +64,18 @@ public class RestaurantActivity extends AppCompatActivity {
                         ArrayAdapter adapter = new ArrayAdapter(RestaurantActivity.this,
                                 android.R.layout.simple_list_item_1, restaurantNames);
                         mListView.setAdapter(adapter);
+                        for (Restaurant restaurant : restaurants) {
+                            Log.d(TAG, "Name: " + restaurant.getName());
+                            Log.d(TAG, "Phone: " + restaurant.getPhone());
+                            Log.d(TAG, "Website: " + restaurant.getWebsite());
+                            Log.d(TAG, "Image url: " + restaurant.getImageUrl());
+                            Log.d(TAG, "Rating: " + Double.toString(restaurant.getRating()));
+                            Log.d(TAG, "Address: " + android.text.TextUtils.join(", ", restaurant.getAddress()));
+                            Log.d(TAG, "Categories: " + restaurant.getCategories().toString());
+                        }
+                    }
                 });
-            }
-        });
+             };
+         });
     }
 }
-
