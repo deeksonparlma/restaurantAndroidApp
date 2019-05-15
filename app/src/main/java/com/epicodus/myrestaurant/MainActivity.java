@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //
 //                String location = mlocation.getText().toString();
 //                Toast.makeText(MainActivity.this , "searching .." ,Toast.LENGTH_LONG).show();
-//                Intent intent = new Intent(MainActivity.this , RestaurantActivity.class);
+//                Intent intent = new Intent(MainActivity.this , RestaurantListActivity.class);
 //                intent.putExtra("location", location);
 //                startActivity(intent);
 //            }
@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if (v == mFindRestaurantsButton) {
             String location = mlocation.getText().toString();
             Toast.makeText(MainActivity.this, "searching ..", Toast.LENGTH_LONG).show();
-            Intent intent = new Intent(MainActivity.this, RestaurantActivity.class);
+            Intent intent = new Intent(MainActivity.this, RestaurantListActivity.class);
             intent.putExtra("location", location);
             startActivity(intent);
         }
