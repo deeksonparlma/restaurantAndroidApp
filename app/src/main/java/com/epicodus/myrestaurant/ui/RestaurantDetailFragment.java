@@ -58,7 +58,9 @@ public class RestaurantDetailFragment extends Fragment implements View.OnClickLi
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_restaurant_detail, container, false);
         ButterKnife.bind(this, view);
-
+        mWebsiteLabel.setOnClickListener(this);
+        mPhoneLabel.setOnClickListener(this);
+        mAddressLabel.setOnClickListener(this);
         Picasso.get().load(mRestaurant.getImageUrl()).into(mImageLabel);
 
         mNameLabel.setText(mRestaurant.getName());
@@ -69,7 +71,7 @@ public class RestaurantDetailFragment extends Fragment implements View.OnClickLi
 
         return view;
     }
-
+//implicit intents//
     @Override
     public void onClick(View v) {
         if (v == mWebsiteLabel) {

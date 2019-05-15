@@ -107,7 +107,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="123 SW Best Ever Ave. Portland, Oregon, 97222"
-                    android:drawableLeft="@drawable/call"
+                    android:drawableLeft="@drawable/loc"
                     android:drawablePadding="4dp"
                     android:id="@+id/addressTextView"
                     android:textColor="@color/colorTextIcons"
