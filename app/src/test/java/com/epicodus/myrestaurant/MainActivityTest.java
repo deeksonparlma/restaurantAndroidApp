@@ -2,6 +2,8 @@ package com.epicodus.myrestaurant;
 
 import android.widget.TextView;
 
+import com.epicodus.myrestaurant.ui.MainActivity;
+
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;

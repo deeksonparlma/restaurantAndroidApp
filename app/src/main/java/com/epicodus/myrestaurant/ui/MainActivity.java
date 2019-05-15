@@ -1,4 +1,4 @@
-package com.epicodus.myrestaurant;
+package com.epicodus.myrestaurant.ui;
 
 import android.content.Intent;
 import android.graphics.Typeface;
@@ -10,6 +10,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.epicodus.myrestaurant.R;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

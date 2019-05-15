@@ -17,9 +17,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".RestaurantDetailActivity"></activity>
         <activity
-            android:name=".FullscreenActivity"
+            android:name=".ui.FullscreenActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/title_activity_fullscreen"
             android:theme="@style/FullscreenTheme" />
@@ -36,15 +35,15 @@
             android:value="@string/google_maps_key" />
 
         <activity
-            android:name=".MapsActivity"
+            android:name=".ui.MapsActivity"
             android:label="@string/title_activity_maps" />
-        <activity android:name=".RestaurantListActivity">
+        <activity android:name=".ui.RestaurantListActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.epicodus.myrestaurant.MainActivity" />
+                android:value="com.epicodus.myrestaurant.ui.MainActivity" />
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.MainActivity"
             android:theme="@style/NoActionBarTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -52,13 +51,14 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".SplashScreen">
+        <activity android:name=".ui.SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".ui.RestaurantDetailActivity" />
     </application>
 
 </manifest>

@@ -1,8 +1,9 @@
-package com.epicodus.myrestaurant;
+package com.epicodus.myrestaurant.ui;
 
 import androidx.fragment.app.FragmentActivity;
 import android.os.Bundle;
 
+import com.epicodus.myrestaurant.R;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;

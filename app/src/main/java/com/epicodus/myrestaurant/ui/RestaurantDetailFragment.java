@@ -1,20 +1,31 @@
-package com.epicodus.myrestaurant;
+package com.epicodus.myrestaurant.ui;
 
 import android.os.Bundle;
+
+import androidx.fragment.app.Fragment;
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.epicodus.myrestaurant.R;
+import com.epicodus.myrestaurant.models.Restaurant;
 import com.squareup.picasso.Picasso;
 
 import org.parceler.Parcels;
 
-import androidx.fragment.app.Fragment;
-import butterknife.BindView;
-import butterknife.ButterKnife;
 
+/**
+ * A simple {@link Fragment} subclass.
+ * Activities that contain this fragment must implement the
+ * to handle interaction events.
+ * Use the {@link RestaurantDetailFragment#newInstance} factory method to
+ * create an instance of this fragment.
+ */
 public class RestaurantDetailFragment extends Fragment {
     @BindView(R.id.restaurantImageView) ImageView mImageLabel;
     @BindView(R.id.restaurantNameTextView) TextView mNameLabel;

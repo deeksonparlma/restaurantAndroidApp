@@ -1,11 +1,13 @@
-package com.epicodus.myrestaurant;
+package com.epicodus.myrestaurant.ui;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Handler;
-import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.epicodus.myrestaurant.R;
+import com.epicodus.myrestaurant.ui.MainActivity;
 
 public class SplashScreen extends Activity {
     AnimationDrawable animation;

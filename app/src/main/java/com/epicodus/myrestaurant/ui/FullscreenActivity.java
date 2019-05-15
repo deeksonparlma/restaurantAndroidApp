@@ -1,4 +1,4 @@
-package com.epicodus.myrestaurant;
+package com.epicodus.myrestaurant.ui;
 
 import android.annotation.SuppressLint;
 import androidx.appcompat.app.ActionBar;
@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.MotionEvent;
 import android.view.View;
+
+import com.epicodus.myrestaurant.R;
 
 /**
  * An example full-screen activity that shows and hides the system UI (i.e.

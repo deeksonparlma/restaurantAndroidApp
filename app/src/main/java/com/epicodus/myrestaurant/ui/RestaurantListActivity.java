@@ -1,4 +1,4 @@
-package com.epicodus.myrestaurant;
+package com.epicodus.myrestaurant.ui;
 
 import android.content.Intent;
 import androidx.appcompat.app.AppCompatActivity;
@@ -6,7 +6,10 @@ import android.os.Bundle;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.epicodus.myrestaurant.R;
 import com.epicodus.myrestaurant.adapters.RestaurantListAdapter;
+import com.epicodus.myrestaurant.models.Restaurant;
+import com.epicodus.myrestaurant.services.YelpService;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

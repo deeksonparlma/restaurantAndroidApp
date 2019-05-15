@@ -3,21 +3,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.epicodus.myrestaurant.RestaurantDetailActivity">
+    tools:context="com.epicodus.myrestaurant.ui.RestaurantDetailActivity">
 
-    <android.support.v4.view.ViewPager
+    <androidx.viewpager.widget.ViewPager
         android:id="@+id/viewPager"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-
-        <android.support.v4.view.PagerTabStrip
+        <androidx.viewpager.widget.PagerTabStrip
             android:id="@+id/pagerHeader"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="top"
             android:paddingTop="4dp"
             android:paddingBottom="4dp" />
-
-    </android.support.v4.view.ViewPager>
-
+    </androidx.viewpager.widget.ViewPager>
 </RelativeLayout>

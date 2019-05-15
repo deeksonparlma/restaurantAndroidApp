@@ -1,8 +1,10 @@
-package com.epicodus.myrestaurant;
+package com.epicodus.myrestaurant.services;
+import com.epicodus.myrestaurant.Constants;
+import com.epicodus.myrestaurant.models.Restaurant;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.json.XML;
 
 import java.io.IOException;
 import java.util.ArrayList;

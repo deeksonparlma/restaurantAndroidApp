@@ -1,8 +1,10 @@
 package com.epicodus.myrestaurant.adapters;
 
 import android.content.Context;
-import androidx.annotation.NonNull;
+
 import androidx.recyclerview.widget.RecyclerView;
+
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,8 +12,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.epicodus.myrestaurant.R;
-import com.epicodus.myrestaurant.Restaurant;
+import com.epicodus.myrestaurant.models.Restaurant;
+import com.epicodus.myrestaurant.ui.RestaurantDetailActivity;
 import com.squareup.picasso.Picasso;
+
+import org.parceler.Parcels;
 
 import java.util.ArrayList;
 
@@ -68,7 +73,11 @@ public class RestaurantListAdapter extends RecyclerView.Adapter<RestaurantListAd
 
         @Override
         public void onClick(View v) {
-
+            int itemPosition = getLayoutPosition();
+            Intent intent = new Intent(mContext, RestaurantDetailActivity.class);
+            intent.putExtra("position", itemPosition);
+            intent.putExtra("restaurants", Parcels.wrap(mRestaurants));
+            mContext.startActivity(intent);
         }
     }
 }

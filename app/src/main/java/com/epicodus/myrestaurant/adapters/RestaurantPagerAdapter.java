@@ -1,7 +1,7 @@
 package com.epicodus.myrestaurant.adapters;
 
-import com.epicodus.myrestaurant.Restaurant;
-import com.epicodus.myrestaurant.RestaurantDetailFragment;
+import com.epicodus.myrestaurant.models.Restaurant;
+import com.epicodus.myrestaurant.ui.RestaurantDetailFragment;
 
 import java.util.ArrayList;
 
