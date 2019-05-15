@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MyRestaurant</string>
+    <string name="app_name">Restaurants</string>
     <string name="title_activity_maps">Map</string>
 
     <string name="title_activity_fullscreen">FullscreenActivity</string>
